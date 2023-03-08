@@ -10,24 +10,29 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(
-          appBar: AppBar(
-            title: Text('Home'),
-            centerTitle: true,
-            backgroundColor: Color(0xFF19D4EC),
-            leading: Icon(Icons.menu),
-            actions: [
-              IconButton(
-                icon: Icon(Icons.add_a_photo),
-                onPressed: () {},
-              ),
-            ],
+          floatingActionButton: FloatingActionButton.large(
+            onPressed: () {},
+            child: Icon(Icons.add),
           ),
           body: Center(
-            child: Text(
-              "This my fast app",
-              style: TextStyle(fontSize: 15, color: Color(0xFF83680D)),
+            child: Stack(
+              children: <Widget>[
+                Container(
+                  height: 200,
+                  width: 200,
+                  color: Colors.red,
+                ),
+                Positioned(
+                  child: CircleAvatar(
+                    radius: 50,
+                    backgroundColor: Colors.green,
+                  ),
+                  top: -50,
+                  left: 50,
+                ),
+              ],
             ),
           ),
         ));
   }
-}
+} // End of MyApp
